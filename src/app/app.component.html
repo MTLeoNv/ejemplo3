@@ -1,0 +1,70 @@
+<header class="custom-navbar">
+  <a href="#" class="logo"><i class="ri-verified-badge-line"></i><span>EVALUACIÓN</span></a>
+  <ul class="navbar">
+    <li><a href="#" class="active">INICIO</a></li>
+    <li><a href="#">EJEMPLO 1</a></li>
+    <li><a href="#">EJEMPLO 2</a></li>
+    <li><a href="#">EJEMPLO 3</a></li>
+    <li><a href="#">EJEMPLO 4</a></li>
+    <li><a href="#">EJEMPLO 5</a></li>
+    <li><a href="#">EJERCICIO</a></li>
+  </ul>
+  <div class="main">
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </div>
+</header>
+
+<main>
+  <div style="margin: 20px;">
+    <h1>CÁTALOGO DE PRODUCTOS</h1>
+
+    @if(listaProductos.length > 0) {
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>SELECCIONAR</th>
+            <th>ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (producto of listaProductos; track producto.id) {
+            <tr>
+              <td>{{ producto.id }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.precio }}</td>
+              <td>
+                <button type="button" class="btn btn-info" (click)="seleccionarProducto(producto)">Seleccionar</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="eliminarProducto(producto.id)">Eliminar</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    } @else {
+      <h3>No hay productos disponibles :/</h3>
+    }
+
+    <div>
+      <p>
+        ID: <input type="number" class="form-control" [(ngModel)]="producto.id" />
+      </p>
+      <p>
+        Descripción: <input type="text" class="form-control" [(ngModel)]="producto.descripcion" />
+      </p>
+      <p>
+        Precio: <input type="number" class="form-control" [(ngModel)]="producto.precio" />
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="agregarProducto()">Agregar</button>
+        <button type="button" class="btn btn-success" (click)="modificarProducto()">Modificar</button>
+      </p>
+    </div>
+  </div>
+</main>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,154 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Remixicon */
+@import url('https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css');
+
+/* Boxicons */
+@import url('https://unpkg.com/boxicons@latest/css/boxicons.min.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --bg-color: #222327;
+  --text-color: #fff;
+  --main-color: #8529fd;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 5px 12%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.50s ease;
+  }
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  color: var(--main-color);
+  font-size: 28px;
+  margin-right: 3px;
+}
+
+.logo span {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Navbar Styles */
+.custom-navbar {
+  display: flex;
+}
+
+.custom-navbar a {
+  color: var(--text-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 0;
+  margin: 0px 30px;
+  transition: all 0.50s ease;
+  text-decoration: none !important;
+}
+
+.custom-navbar a:hover {
+  color: var(--main-color) !important;
+}
+
+.custom-navbar a.active {
+  color: var(--main-color) !important;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+}
+
+#menu-icon {
+  font-size: 35px;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+
+main {
+  margin-top: 100px;
+}
+
+@media (max-width: 1280px) {
+  header {
+    padding: 14px 2%;
+    transition: .2s;
+  }
+
+  .custom-navbar a {
+    padding: 5px 0;
+    margin: 0px 20px;
+  }
+}
+
+@media (max-width: 1090px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .custom-navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 270px;
+    height: 50vh;
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all 0.50s ease;
+  }
+
+  .custom-navbar a {
+    display: block;
+    margin: 12px 0;
+    padding: 0px 25px;
+    transition: all 0.50s ease;
+  }
+
+  .custom-navbar a:hover {
+    color: var(--text-color);
+    transform: translateY(5px);
+  }
+
+  .custom-navbar a.active {
+    color: var(--text-color);
+  }
+
+  .custom-navbar.open {
+    right: 2%;
+  }
+}
