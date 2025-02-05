@@ -35,7 +35,7 @@ export class AppComponent {
 
     for (let i = 0; i < this.listaProductos.length; i++) {
       if (this.producto.id == this.listaProductos[i].id) {
-        alert('Ya existeeeee, busca otro muejejjeje');
+        alert('Ya existe. Agrega otro');
         return;
       }
     }
