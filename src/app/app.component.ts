@@ -82,7 +82,7 @@ export class AppComponent {
         return;
       }
     }
-    alert('No existeeee');
+    alert('No existe.');
   }
 
   //funcion para eliminar un producto existente
@@ -94,7 +94,7 @@ export class AppComponent {
         return;
       }
     }
-    alert('No existeeee');
+    alert('No existe.');
   }
 
 }
